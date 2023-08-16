@@ -10,10 +10,10 @@ export default function TodoList() {
   const [editToDo, setEditToDo] = useState<toDoObject | null>(null)
 
   useEffect(() => {
-    let listToDo: string | null | toDoObject[] = localStorage.getItem('toDoList')
-    if (listToDo) {
-      listToDo = JSON.parse(listToDo) as toDoObject[]
-      setListToDo([...listToDo])
+    let getList: string | null | toDoObject[] = localStorage.getItem('toDoList')
+    if (getList) {
+      getList = JSON.parse(getList) as toDoObject[]
+      setListToDo([...getList])
     }
   }, [])
 
@@ -34,9 +34,7 @@ export default function TodoList() {
     listToDoClone = [...listToDoClone, toDoObject]
 
     SynsDataToLocal(listToDoClone)
-    // setListToDo([...listToDoClone])
-    // const stringifyData = JSON.stringify(listToDoClone)
-    // localStorage.setItem('toDoList', stringifyData)
+    
   }
 
   const toggleCheckToDo = (id: string) => {
@@ -84,7 +82,7 @@ export default function TodoList() {
 
     setEditToDo(null)
   }
-  
+
   const notDoneTaskList = listToDo.filter((item: toDoObject) => item.isDone === false)
   const doneTaskList = listToDo.filter((item: toDoObject) => item.isDone === true)
 

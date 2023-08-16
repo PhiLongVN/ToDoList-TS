@@ -5,7 +5,7 @@ import './list.scss'
 
 interface ListProps {
   isDone: boolean
-  list: Array<toDoObject>
+  list: Array<toDoObject> | null | undefined
   toggleCheckToDo: (id: string) => void
   deleteToDo: (id: string) => void
   startEditTodo: (id: string) => void
@@ -28,7 +28,7 @@ export default function List(props: ListProps) {
     <div className="taskList mb-2">
       <h2 className="listTitle">{isDone ? 'Hoàn Thành' : ' Chưa Hoàn Thành'}</h2>
 
-      {list.map((item: toDoObject) => (
+      {list?.map((item: toDoObject) => (
         <div
           className="listBox"
           key={item.id}
