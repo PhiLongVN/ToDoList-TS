@@ -1,0 +1,16 @@
+@import url(./font.scss);
+@import url(./reset.scss);
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: aliceblue;
+}
+.App {
+  margin: auto;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}

@@ -1,0 +1,52 @@
+.taskList {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.listTitle {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.listBox {
+  display: flex;
+  width: 100%;
+  height: auto;
+  gap: 0.75rem;
+  padding: 0.4rem 0;
+
+  .taskName {
+    height: auto;
+    flex: 0 1 70%;
+    display: flex;
+    align-items: center;
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &.done {
+      opacity: 0.5;
+      text-decoration: line-through;
+    }
+  }
+
+  .actionButton {
+    display: flex;
+    gap: 0.5rem;
+
+    button {
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      border-radius: 5px;
+      padding: 0.25rem;
+    }
+
+    .done {
+      background-color: aquamarine;
+    }
+    .delete {
+      background-color: red;
+    }
+  }
+}
